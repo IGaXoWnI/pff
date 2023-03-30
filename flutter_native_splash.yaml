@@ -1,0 +1,4 @@
+# flutter_native_splash.yaml
+
+image: assets/images/Splash.png # or assets/my_splash_screen.svg
+color: "#ffffff" # Background color
