@@ -2,8 +2,10 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import '../Routing //App_route.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:pff/component/app_bar.dart';
+import 'package:pff/constants/constants.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -25,25 +27,47 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
+    var _textEditingController;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          IconButton(
-              onPressed: () async {
-                await FirebaseAuth.instance.signOut();
-                context.goNamed(AppRoute.login.name);
-              },
-              icon: Icon(
-                Icons.exit_to_app_rounded,
-                color: Colors.black,
-              ))
-        ],
-      ),
-      body: Center(
-        child: Text('Welcome to your account '),
-      ),
-    );
+        appBar: homeAppBar(context),
+        body: Padding(
+          padding: const EdgeInsets.only(left: 25.0, right: 25, top: 35),
+          child: Column(
+            children: [
+              Text(
+                'Rescue Food. Save Money!',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
+                controller: _textEditingController,
+                decoration: InputDecoration(
+                  prefixIcon: IconButton(
+                    icon: SvgPicture.asset(
+                      'assets/Icons/search.svg',
+                      width: 24,
+                      height: 24,
+                      color: kPrimaryColor,
+                    ),
+                    onPressed: () {},
+                  ),
+                  suffixIcon: IconButton(
+                    icon: SvgPicture.asset(
+                      'assets/Icons/filters-2.svg',
+                      width: 24,
+                      height: 24,
+                      color: kPrimaryColor,
+                    ),
+                    onPressed: () => _textEditingController.clear(),
+                  ),
+                  hintText: 'Search',
+                  border: InputBorder.none,
+                ),
+              )
+            ],
+          ),
+        ));
   }
 }
