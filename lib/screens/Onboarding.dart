@@ -52,7 +52,8 @@ class _OnbordingState extends State<Onbording> {
                               child: Text(
                                 "Skip >",
                                 style: TextStyle(
-                                    color: Colors.orange, fontSize: 20),
+                                    color: Color.fromRGBO(246, 121, 82, 1),
+                                    fontSize: 20),
                               ))
                         ],
                       ),
@@ -100,20 +101,29 @@ class _OnbordingState extends State<Onbording> {
             margin: EdgeInsets.all(40),
             width: double.infinity,
             child: TextButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.orange),
                 ),
-                child: Text(
-                  currentIndex == contents.length - 1 ? "Continue" : "Next",
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-                onPressed: () => context.goNamed(AppRoute.login.name)),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    Color.fromRGBO(246, 121, 82, 1)),
+              ),
+              child: Text(
+                currentIndex == contents.length - 1 ? "Continue" : "Next",
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+              onPressed: () {
+                if (currentIndex == contents.length - 1) {
+                  context.goNamed(AppRoute.login.name);
+                }
+                _controller.nextPage(
+                  duration: Duration(milliseconds: 100),
+                  curve: Curves.bounceIn,
+                );
+              },
+            ),
           )
         ],
       ),
@@ -127,7 +137,7 @@ class _OnbordingState extends State<Onbording> {
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.orange,
+        color: Color.fromRGBO(246, 121, 82, 1),
       ),
     );
   }
