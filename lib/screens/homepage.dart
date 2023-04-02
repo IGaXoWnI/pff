@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pff/component/app_bar.dart';
 import 'package:pff/constants/constants.dart';
+import '../component/card.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -65,7 +66,8 @@ class _HomepageState extends State<Homepage> {
                   hintText: 'Search',
                   border: InputBorder.none,
                 ),
-              )
+              ),
+              card()
             ],
           ),
         ));
