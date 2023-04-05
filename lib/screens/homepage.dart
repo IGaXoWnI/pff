@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pff/component/app_bar.dart';
+import 'package:pff/component/cycle.dart';
 import 'package:pff/constants/constants.dart';
 import '../component/cardWidget.dart';
 
@@ -65,6 +66,36 @@ class _HomepageState extends State<Homepage> {
                     hintText: 'Search',
                     border: InputBorder.none,
                   ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  height: 100,
+                  child: Expanded(
+                      child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      cycleWidget(
+                        urlPath: 'assets/Icons/vegan.png',
+                      ),
+                      cycleWidget(
+                        urlPath: 'assets/Icons/healty.png',
+                      ),
+                      cycleWidget(
+                        urlPath: 'assets/Icons/goodfood.png',
+                      ),
+                      cycleWidget(
+                        urlPath: 'assets/Icons/smartresto.png',
+                      ),
+                      cycleWidget(
+                        urlPath: 'assets/Icons/kfc.png',
+                      ),
+                      cycleWidget(
+                        urlPath: 'assets/Icons/macdo.png',
+                      ),
+                    ],
+                  )),
                 ),
                 SizedBox(
                   height: 15,
