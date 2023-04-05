@@ -1,8 +1,11 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pff/component/app_bar.dart';
 import 'package:pff/component/cycle.dart';
+import 'package:pff/component/offre.dart';
 import 'package:pff/constants/constants.dart';
 import '../component/cardWidget.dart';
 
@@ -32,16 +35,9 @@ class _HomepageState extends State<Homepage> {
         appBar: homeAppBar(context),
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(left: 25.0, right: 25, top: 35),
+            padding: const EdgeInsets.only(left: 20.0, right: 20, top: 35),
             child: Column(
               children: [
-                Text(
-                  'Rescue Food. Save Money!',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
                 TextField(
                   controller: _textEditingController,
                   decoration: InputDecoration(
@@ -66,6 +62,13 @@ class _HomepageState extends State<Homepage> {
                     hintText: 'Search',
                     border: InputBorder.none,
                   ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                offreWidget(
+                  title: 'Breakfast \nBest Deals',
+                  offreText: 'UP TO 40% OFF',
                 ),
                 SizedBox(
                   height: 15,
@@ -98,7 +101,16 @@ class _HomepageState extends State<Homepage> {
                   )),
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 25,
+                ),
+                Text(
+                  'Restaurants Near You',
+                  textAlign: TextAlign.start,
+                  textDirection: TextDirection.ltr,
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 25,
                 ),
                 Container(
                   height: 273,
