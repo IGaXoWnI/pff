@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:pff/component/app_bar.dart';
 import 'package:pff/component/cycle.dart';
 import 'package:pff/component/offre.dart';
@@ -32,6 +33,35 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     var _textEditingController;
     return Scaffold(
+      
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 12),
+          child: GNav(
+              backgroundColor: Colors.transparent,
+              activeColor: kPrimaryColor,
+              color: Colors.grey,
+              tabBackgroundColor: Color(0xffFFE8E0),
+              padding: EdgeInsets.all(18),
+              gap: 8,
+              tabs: const [
+                GButton(
+                  icon: Icons.home,
+                  text: 'Home',
+                ),
+                GButton(
+                  icon: Icons.favorite_border,
+                  text: 'Favorite',
+                ),
+                GButton(
+                  icon: Icons.shopping_cart,
+                  text: 'Cart',
+                ),
+                GButton(
+                  icon: Icons.person_outline,
+                  text: 'Account',
+                ),
+              ]),
+        ),
         appBar: homeAppBar(context),
         body: SafeArea(
           child: Padding(
@@ -125,7 +155,7 @@ class _HomepageState extends State<Homepage> {
                           rating: '4.5',
                         ),
                         CardWidget(
-                          imgUrl: 'assets/Images/cover.png',
+                          imgUrl: 'assets/Images/cover2.png',
                           cardTitle: 'The Steak House',
                           time: '20.5',
                           rating: '3.9',

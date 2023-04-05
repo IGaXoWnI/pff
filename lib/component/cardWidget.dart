@@ -19,8 +19,8 @@ class CardWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 10.5),
       child: Container(
-        height: 273,
-        width: 286,
+        height: 250,
+        width: 260,
         child: Column(
           children: [
             Expanded(
