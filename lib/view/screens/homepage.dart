@@ -4,10 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:pff/component/app_bar.dart';
-import 'package:pff/component/cycle.dart';
-import 'package:pff/component/offre.dart';
-import 'package:pff/constants/constants.dart';
+import 'package:pff/view/component/app_bar.dart';
+import 'package:pff/view/component/cycle.dart';
+import 'package:pff/view/component/offre.dart';
+import 'package:pff/view/constants/constants.dart';
 import '../component/cardWidget.dart';
 
 class Homepage extends StatefulWidget {

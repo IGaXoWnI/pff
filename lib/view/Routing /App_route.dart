@@ -1,8 +1,8 @@
 import 'package:go_router/go_router.dart';
-import 'package:pff/screens/Onboarding.dart';
-import 'package:pff/screens/homepage.dart';
-import 'package:pff/screens/login.dart';
-import 'package:pff/screens/signup.dart';
+import 'package:pff/view/screens/Onboarding.dart';
+import 'package:pff/view/screens/homepage.dart';
+import 'package:pff/view/screens/login.dart';
+import 'package:pff/view/screens/signup.dart';
 
 enum AppRoute {
   onboarding,
