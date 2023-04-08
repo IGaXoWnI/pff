@@ -1,3 +1,5 @@
+import 'package:pff/core/constants/imageAssets.dart';
+
 class UnbordingContent {
   String image;
   String title;
@@ -9,12 +11,12 @@ class UnbordingContent {
 
 List<UnbordingContent> contents = [
   UnbordingContent(
-      image: 'assets/images/Illustartion.svg',
+      image: AppImages.onboarding1,
       title: 'GPS Tracking',
       discription:
           "Loved the class! Such beautiful land and collective impact infrastructure social entrepreneur. "),
   UnbordingContent(
-      image: 'assets/images/Illustration2.svg',
+      image: AppImages.onboarding2,
       title: 'GPS Tracking',
       discription:
           "Loved the class! Such beautiful land and collective impact infrastructure social entrepreneur. "),

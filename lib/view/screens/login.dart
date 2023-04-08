@@ -4,9 +4,10 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pff/core/constants/imageAssets.dart';
 import '../Routing //App_route.dart';
-import '../component/button.dart';
-import '../component/textfield.dart';
+import 'package:pff/core/shared/button.dart';
+import 'package:pff/core/shared/textfield.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatefulWidget {
@@ -80,7 +81,7 @@ class _LoginState extends State<Login> {
               height: 60,
             ),
             Image.asset(
-              'assets/logo.png',
+              AppImages.logo,
               width: 84,
               height: 92,
             ),
@@ -101,7 +102,7 @@ class _LoginState extends State<Login> {
                     Textf(
                         hint: 'Email',
                         ispasssword: false,
-                        path: 'assets/Icons/Message.png',
+                        path: AppIcons.message,
                         onsave: (val) {
                           myemail = val;
                           return null;
@@ -114,7 +115,7 @@ class _LoginState extends State<Login> {
                         }),
                     Textf(
                       hint: 'Password',
-                      path: 'assets/Icons/Lock.png',
+                      path: AppIcons.lock,
                       ispasssword: true,
                       onsave: (val) {
                         mypassword = val;
@@ -187,9 +188,9 @@ class _LoginState extends State<Login> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset('assets/Icons/fb.png'),
+                  Image.asset(AppIcons.fb),
                   GestureDetector(
-                    child: Image.asset('assets/Icons/google.png'),
+                    child: Image.asset(AppIcons.google),
                     onTap: () async {
                       UserCredential cred = await signInWithGoogle();
                       context.goNamed(AppRoute.homepage.name);

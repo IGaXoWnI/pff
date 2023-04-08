@@ -4,11 +4,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:pff/view/component/app_bar.dart';
-import 'package:pff/view/component/cycle.dart';
-import 'package:pff/view/component/offre.dart';
-import 'package:pff/view/constants/constants.dart';
-import '../component/cardWidget.dart';
+import 'package:pff/core/shared/app_bar.dart';
+import 'package:pff/core/shared/cycle.dart';
+import 'package:pff/core/shared/offre.dart';
+import 'package:pff/core/constants/appColors.dart';
+import 'package:pff/core/shared/cardWidget.dart';
+import 'package:pff/core/constants/imageAssets.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -113,22 +114,22 @@ class _HomepageState extends State<Homepage> {
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
                       cycleWidget(
-                        urlPath: 'assets/Icons/vegan.png',
+                        urlPath: AppIcons.vegan,
                       ),
                       cycleWidget(
-                        urlPath: 'assets/Icons/healty.png',
+                        urlPath: AppIcons.healthy,
                       ),
                       cycleWidget(
-                        urlPath: 'assets/Icons/goodfood.png',
+                        urlPath: AppIcons.goodfood,
                       ),
                       cycleWidget(
-                        urlPath: 'assets/Icons/smartresto.png',
+                        urlPath: AppIcons.smartResto,
                       ),
                       cycleWidget(
-                        urlPath: 'assets/Icons/kfc.png',
+                        urlPath: AppIcons.kfc,
                       ),
                       cycleWidget(
-                        urlPath: 'assets/Icons/macdo.png',
+                        urlPath: AppIcons.macdo,
                       ),
                     ],
                   )),
@@ -152,19 +153,19 @@ class _HomepageState extends State<Homepage> {
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
                         CardWidget(
-                          imgUrl: 'assets/Images/cover.png',
+                          imgUrl: AppImages.cover1,
                           cardTitle: 'Barbecue Palace',
                           time: '15',
                           rating: '4.5',
                         ),
                         CardWidget(
-                          imgUrl: 'assets/Images/cover2.png',
+                          imgUrl: AppImages.cover2,
                           cardTitle: 'The Steak House',
                           time: '20.5',
                           rating: '3.9',
                         ),
                         CardWidget(
-                          imgUrl: 'assets/Images/cover.png',
+                          imgUrl: AppImages.cover1,
                           cardTitle: 'Restaurant Douz Cool',
                           time: '10',
                           rating: '4.9',

@@ -3,8 +3,8 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../component/button.dart';
-import '../component/textfield.dart';
+import 'package:pff/core/shared/button.dart';
+import 'package:pff/core/shared/textfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../Routing /App_route.dart';
