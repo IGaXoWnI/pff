@@ -33,9 +33,12 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     var _textEditingController;
     return Scaffold(
-      
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 12),
+          padding: const EdgeInsets.only(
+            left: 20,
+            right: 20,
+            bottom: 12,
+          ),
           child: GNav(
               backgroundColor: Colors.transparent,
               activeColor: kPrimaryColor,
@@ -46,7 +49,7 @@ class _HomepageState extends State<Homepage> {
               tabs: const [
                 GButton(
                   icon: Icons.home,
-                  text: 'Home',
+                  text: 'Home ',
                 ),
                 GButton(
                   icon: Icons.favorite_border,
