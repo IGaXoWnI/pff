@@ -5,7 +5,7 @@ class AppImages {
   static const String splash = '$rootImagesPath/Splash.png';
   static const String cover1 = '$rootImagesPath/cover.png';
   static const String cover2 = '$rootImagesPath/cover2.png';
-  static const String onboarding1 = '$rootImagesPath/Illustration.svg';
+  static const String onboarding1 = '$rootImagesPath/Illustartion.svg';
   static const String onboarding2 = '$rootImagesPath/Illustration2.svg';
 }
 

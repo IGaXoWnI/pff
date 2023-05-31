@@ -7,7 +7,7 @@ import 'package:pff/core/shared/button.dart';
 import 'package:pff/core/shared/textfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../Routing /App_route.dart';
+import '../Routing/App_route.dart';
 
 class Signup extends StatefulWidget {
   final bool? isChecked = true;

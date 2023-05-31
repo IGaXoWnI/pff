@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import '../Routing /App_route.dart';
+import '../Routing/App_route.dart';
 import 'package:pff/data/models/content_model.dart';
 
 class Onbording extends StatefulWidget {
@@ -59,7 +59,7 @@ class _OnbordingState extends State<Onbording> {
                       ),
                       Container(
                         height: 400,
-                        child: Image.asset(
+                        child: SvgPicture.asset(
                           contents[i].image,
                           fit: BoxFit.contain,
                         ),
