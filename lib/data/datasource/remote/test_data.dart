@@ -1,13 +1,13 @@
 import 'package:pff/core/class/crud.dart';
 import 'package:pff/view/widgets/linkapi.dart';
 
-class HomeData {
+class TestData {
   Crud crud;
 
-  HomeData(this.crud);
+  TestData(this.crud);
 
   getData() async {
     var response = await crud.postData(AppLink.test, {});
-    return response.fold((error) => 1, (r) => r);
+    return response.fold((l) => l, (r) => r);
   }
 }

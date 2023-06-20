@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:pff/view/screens/login.dart';
+import 'package:get/get.dart';
+import 'package:pff/binding/initialbinding.dart';
+import 'package:pff/view/test/test.dart';
 import 'view/Routing/App_route.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +14,8 @@ void main() async {
   await Firebase.initializeApp();
 
   // Retrieve the FCM token
-  String? token = await FirebaseMessaging.instance.getToken();
-  print('FCM Token: $token'); // Print the token for testing purposes
+  // String? token = await FirebaseMessaging.instance.getToken();
+  // print('FCM Token: $token'); // Print the token for testing purposes
 
   var user = FirebaseAuth.instance.currentUser;
   if (user == null) {
@@ -32,9 +33,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: islogin ? Home() : Login(),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false, home: Test(),
+      initialBinding: initialbinding(),
+      // islogin ? Home() : Login(),
     );
   }
 }

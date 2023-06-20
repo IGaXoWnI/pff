@@ -53,6 +53,7 @@ dependencies:
   google_maps_flutter: ^2.3.1
   line_awesome_flutter: ^2.0.0
   get: ^4.6.5
+  lottie: ^2.4.0
 
 dev_dependencies:
   flutter_test:
@@ -88,6 +89,7 @@ flutter:
     - assets/Icons/
     - assets/Images/cover.png
     - assets/Icons/curved/
+    - assets/lottie/
     
 
 

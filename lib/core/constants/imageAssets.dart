@@ -10,6 +10,14 @@ class AppImages {
   static const String product = '$rootImagesPath/product.svg';
 }
 
+class AppLottie {
+  static const String rootLottiePath = "assets/lottie";
+  static const String loading = '$rootLottiePath/loading.json';
+  static const String server = '$rootLottiePath/server.json';
+  static const String no_data = '$rootLottiePath/no_data.json';
+  static const String offline = '$rootLottiePath/offline.json';
+}
+
 class AppIcons {
   static const String fb = 'assets/Icons/fb.png';
   static const String filters = 'assets/Icons/filters-2.svg';
