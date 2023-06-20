@@ -5,7 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pff/core/constants/imageAssets.dart';
-import '../Routing //App_route.dart';
+import 'package:pff/view/screens/homepage.dart';
+import '../Routing/App_route.dart';
 import 'package:pff/core/shared/button.dart';
 import 'package:pff/core/shared/textfield.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -193,7 +194,10 @@ class _LoginState extends State<Login> {
                     child: Image.asset(AppIcons.google),
                     onTap: () async {
                       UserCredential cred = await signInWithGoogle();
-                      context.goNamed(AppRoute.homepage.name);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Homepage()),
+                      );
                     },
                   )
                 ],
