@@ -7,6 +7,7 @@ class AppImages {
   static const String cover2 = '$rootImagesPath/cover2.png';
   static const String onboarding1 = '$rootImagesPath/Illustartion.svg';
   static const String onboarding2 = '$rootImagesPath/Illustration2.svg';
+  static const String product = '$rootImagesPath/product.svg';
 }
 
 class AppIcons {
@@ -30,4 +31,5 @@ class AppIcons {
   static const String smartResto = 'assets/Icons/smartresto.png';
   static const String star = 'assets/Icons/Star.svg';
   static const String vegan = 'assets/Icons/vegan.png';
+  static const String arrowleft = 'assets/Icons/vegan.png';
 }

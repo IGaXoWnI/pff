@@ -1,8 +1,9 @@
-// ignore_for_file: deprecated_member_use
-
+// ignore_for_file: deprecated_member_use, unused_import
+import 'package:geolocator/geolocator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:pff/core/shared/app_bar.dart';
 import 'package:pff/core/shared/cycle.dart';
@@ -10,6 +11,9 @@ import 'package:pff/core/shared/offre.dart';
 import 'package:pff/core/constants/appColors.dart';
 import 'package:pff/core/shared/cardWidget.dart';
 import 'package:pff/core/constants/imageAssets.dart';
+import 'package:pff/view/screens/user.dart';
+
+import '../Routing/App_route.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -47,7 +51,7 @@ class _HomepageState extends State<Homepage> {
               tabBackgroundColor: Color(0xffFFE8E0),
               padding: EdgeInsets.all(18),
               gap: 8,
-              tabs: const [
+              tabs: [
                 GButton(
                   icon: Icons.home,
                   text: 'Home ',
@@ -63,6 +67,10 @@ class _HomepageState extends State<Homepage> {
                 GButton(
                   icon: Icons.person_outline,
                   text: 'Account',
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => UserMenu()),
+                  ),
                 ),
               ]),
         ),
