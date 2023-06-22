@@ -1,10 +1,12 @@
-// ignore_for_file: deprecated_member_use, unused_import
+// ignore_for_file: deprecated_member_use, unused_import, unused_local_variable
 import 'package:geolocator/geolocator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:pff/controller/home_controller.dart';
 import 'package:pff/core/shared/app_bar.dart';
 import 'package:pff/core/shared/cycle.dart';
 import 'package:pff/core/shared/offre.dart';
@@ -36,6 +38,8 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
+    HomeControllerImp controller = Get.put(HomeControllerImp());
+
     var _textEditingController;
     return Scaffold(
         bottomNavigationBar: Padding(

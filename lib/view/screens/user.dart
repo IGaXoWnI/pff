@@ -2,7 +2,9 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:pff/controller/home_controller.dart';
 import 'package:pff/view/screens/login.dart';
 
 import '../../core/constants/appColors.dart';
@@ -12,6 +14,7 @@ class UserMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomeControllerImp controller = Get.put(HomeControllerImp());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -74,14 +77,14 @@ class UserMenu extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  "ISMAIL BAGUNI",
+                  "${controller.username}",
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
                 ),
                 SizedBox(
                   height: 8,
                 ),
                 Text(
-                  "igaxowni@gmail.com",
+                  "${controller.email}",
                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                 ),
                 SizedBox(

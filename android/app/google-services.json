@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "379789689091",
-    "project_id": "pffapp-d1b68",
-    "storage_bucket": "pffapp-d1b68.appspot.com"
+    "project_number": "425761229056",
+    "project_id": "myapp-28e32",
+    "storage_bucket": "myapp-28e32.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:379789689091:android:cffdffaf7cf73d0dd2a936",
+        "mobilesdk_app_id": "1:425761229056:android:ddeedad66b6548d81f8be5",
         "android_client_info": {
           "package_name": "com.example.pff"
         }
       },
       "oauth_client": [
         {
-          "client_id": "379789689091-hmcd235420kkobf22o0r3gtt16uk1svo.apps.googleusercontent.com",
+          "client_id": "425761229056-6nuh9mlkt54s7jbauim5be1elc7p0vki.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAInYI0mT5GL-pOsWHUkW-tW5SJ8xev5B4"
+          "current_key": "AIzaSyBP3aNMHsIBlTyXxrDR49hMgyGcGo0yB4U"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "379789689091-hmcd235420kkobf22o0r3gtt16uk1svo.apps.googleusercontent.com",
+              "client_id": "425761229056-6nuh9mlkt54s7jbauim5be1elc7p0vki.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "425761229056-fv9ki599m5s4n330v7s45geru6en043v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pff"
+              }
             }
           ]
         }

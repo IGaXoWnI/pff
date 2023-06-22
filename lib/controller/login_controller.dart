@@ -1,7 +1,11 @@
+// ignore_for_file: unused_local_variable
+
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pff/core/class/statusrequest.dart';
 import 'package:pff/core/functions/handlingdatacontrol.dart';
+import 'package:pff/core/services/services.dart';
 import 'package:pff/data/datasource/remote/auth/login.dart';
 
 import '../view/Routing/App_route.dart';
@@ -17,6 +21,8 @@ class LoginControllerImp extends LoginController {
   late TextEditingController email;
   late TextEditingController password;
 
+  MyServices myServices = Get.find();
+
   Statusrequest? statusrequest;
   LoginData loginData = LoginData(Get.find());
 
@@ -30,6 +36,13 @@ class LoginControllerImp extends LoginController {
       if (Statusrequest.succes == statusrequest) {
         if (response["status"] == "success") {
           // data.addAll(response["data"]);
+          myServices.sharedPreferences
+              .setInt("id", response["data"]["users_id"]);
+          myServices.sharedPreferences
+              .setString("username", response["data"]["users_name"]);
+          myServices.sharedPreferences
+              .setString("email", response["data"]["users_email"]);
+
           Get.offNamed(AppRoute.homepage.name);
         } else {
           Get.defaultDialog(
@@ -48,6 +61,11 @@ class LoginControllerImp extends LoginController {
 
   @override
   void onInit() {
+    FirebaseMessaging.instance.getToken().then((value) {
+      print(value);
+      String? token = value;
+    });
+
     email = TextEditingController();
     password = TextEditingController();
     super.onInit();
