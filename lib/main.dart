@@ -2,9 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:pff/binding/initialbinding.dart';
-import 'package:pff/view/test/test.dart';
 import 'view/Routing/App_route.dart';
 import 'package:flutter/material.dart';
+
+import 'view/screens/login.dart';
 
 bool islogin = false;
 
@@ -34,9 +35,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false, home: Test(),
+      debugShowCheckedModeBanner: false,
+      home: islogin ? Home() : Login(),
       initialBinding: initialbinding(),
-      // islogin ? Home() : Login(),
+      initialRoute: AppPages.initial.toString(),
+      getPages: AppPages.routes,
     );
   }
 }
@@ -46,19 +49,13 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routerConfig: goRouter,
-      // initialRoute: "/",
-      // routes: {
-      //   "/": (context) => Aboutpage1(),
-      //   "/about2": (context) => Aboutpage2(),
-      //   "/about3": (context) => Aboutpage3(),
-      //   "/login": (context) => Login(),
-      //   "/signup": (context) => Signup(),
-      //   "/homepage": (context) => Homepage(),
-
-      // }
+      home: Scaffold(
+        body: Center(
+          child: Text('Home'),
+        ),
+      ),
     );
   }
 }

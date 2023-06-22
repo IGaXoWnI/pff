@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import '../Routing/App_route.dart';
 import 'package:pff/data/models/content_model.dart';
 
@@ -48,7 +48,7 @@ class _OnbordingState extends State<Onbording> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           GestureDetector(
-                              onTap: () => context.goNamed(AppRoute.login.name),
+                              onTap: () => Get.toNamed(AppRoute.signup.name),
                               child: Text(
                                 "Skip >",
                                 style: TextStyle(
@@ -116,7 +116,8 @@ class _OnbordingState extends State<Onbording> {
               ),
               onPressed: () {
                 if (currentIndex == contents.length - 1) {
-                  context.goNamed(AppRoute.login.name);
+                  Get.toNamed(AppRoute.login.name);
+                  ;
                 }
                 _controller.nextPage(
                   duration: Duration(milliseconds: 100),

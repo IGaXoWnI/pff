@@ -1,4 +1,4 @@
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:pff/view/screens/Onboarding.dart';
 import 'package:pff/view/screens/homepage.dart';
 import 'package:pff/view/screens/login.dart';
@@ -11,26 +11,34 @@ enum AppRoute {
   homepage,
 }
 
-final goRouter = GoRouter(routes: [
-  GoRoute(
-      path: '/',
-      name: AppRoute.onboarding.name,
-      builder: (context, state) => Onbording(),
-      routes: [
-        GoRoute(
-          path: 'login',
-          name: AppRoute.login.name,
-          builder: (context, state) => Login(),
+class AppPages {
+  static const initial = AppRoute.onboarding;
+
+  static final routes = [
+    GetPage(
+      name: _Paths.onboarding,
+      page: () => Onbording(),
+      children: [
+        GetPage(
+          name: _Paths.login,
+          page: () => Login(),
         ),
-        GoRoute(
-          path: 'signup',
-          name: AppRoute.signup.name,
-          builder: (context, state) => Signup(),
+        GetPage(
+          name: _Paths.signup,
+          page: () => Signup(),
         ),
-        GoRoute(
-          path: 'homepage',
-          name: AppRoute.homepage.name,
-          builder: (context, state) => Homepage(),
+        GetPage(
+          name: _Paths.homepage,
+          page: () => Homepage(),
         ),
-      ]),
-]);
+      ],
+    ),
+  ];
+}
+
+abstract class _Paths {
+  static const onboarding = '/';
+  static const login = '/login';
+  static const signup = '/signup';
+  static const homepage = '/homepage';
+}

@@ -8,6 +8,7 @@ class Textf extends StatelessWidget {
   final bool ispasssword;
   final String? Function(String?)? validator;
   final String? Function(String?)? onsave;
+  final TextEditingController mycontroller;
 
   const Textf({
     Key? key,
@@ -15,7 +16,8 @@ class Textf extends StatelessWidget {
     required this.path,
     required this.ispasssword,
     required this.validator,
-    required this.onsave,
+    this.onsave,
+    required this.mycontroller,
   }) : super(key: key);
 
   @override
@@ -23,6 +25,7 @@ class Textf extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.only(top: 30, right: 35, left: 35),
         child: TextFormField(
+          controller: mycontroller,
           onSaved: onsave,
           validator: validator,
           obscureText: ispasssword,
