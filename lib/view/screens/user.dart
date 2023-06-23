@@ -19,21 +19,6 @@ class UserMenu extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pop();
-          },
-          child: Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(17),
-              image: DecorationImage(
-                image: AssetImage('assets/Icons/curved/arrow-left.png'),
-              ),
-            ),
-          ),
-        ),
         title: Text(
           "Profile",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),

@@ -4,11 +4,10 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import 'package:pff/binding/initialbinding.dart';
 import 'package:pff/core/services/services.dart';
+import 'package:pff/view/screens/homepage.dart';
 import 'view/Routing/App_route.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
-
-import 'view/screens/login.dart';
 
 bool islogin = false;
 
@@ -43,7 +42,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: islogin ? Home() : Login(),
+      home: Homepage(),
       initialBinding: initialbinding(),
       initialRoute: AppPages.initial.toString(),
       getPages: AppPages.routes,

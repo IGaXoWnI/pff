@@ -3,16 +3,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CardWidget extends StatelessWidget {
   final String imgUrl;
+  final String logo;
   final String cardTitle;
-  final String time;
+  final String? time;
   final String rating;
 
   const CardWidget(
       {super.key,
       required this.imgUrl,
       required this.cardTitle,
-      required this.time,
-      required this.rating});
+      this.time,
+      required this.rating,
+      required this.logo});
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +27,32 @@ class CardWidget extends StatelessWidget {
           children: [
             Expanded(
                 flex: 1,
-                child: Container(
-                  child: Image.asset(
-                    imgUrl,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
+                child: Stack(
+                  children: [
+                    Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15),
+                        ),
+                        child: Image.network(
+                          imgUrl,
+                        ),
+                      ),
                     ),
-                  ),
+                    Positioned(
+                      bottom: 20,
+                      left: 10,
+                      child: SizedBox(
+                        width: 60,
+                        height: 60,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Image(image: NetworkImage(logo)),
+                        ),
+                      ),
+                    )
+                  ],
                 )),
             Expanded(
               flex: 1,
@@ -56,7 +74,7 @@ class CardWidget extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              '$time min',
+                              '25 min',
                               style: TextStyle(color: Colors.grey),
                             ),
                             SizedBox(
@@ -67,8 +85,7 @@ class CardWidget extends StatelessWidget {
                               width: 24,
                               height: 24,
                             ),
-                            Text('$rating',
-                                style: TextStyle(color: Colors.grey))
+                            Text(rating, style: TextStyle(color: Colors.grey))
                           ],
                         )
                       ],

@@ -48,7 +48,7 @@ class _OnbordingState extends State<Onbording> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           GestureDetector(
-                              onTap: () => Get.toNamed(AppRoute.signup.name),
+                              onTap: () => Get.toNamed(AppRoute.login.name),
                               child: Text(
                                 "Skip >",
                                 style: TextStyle(
