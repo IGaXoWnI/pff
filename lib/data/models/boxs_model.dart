@@ -11,6 +11,11 @@ class BoxsModel {
   String? boxsDate;
   int? boxsCategorie;
   int? restaurantId;
+  int? categoriesId;
+  String? categoriesName;
+  String? categoriesImage;
+  String? categoriesDescription;
+  String? categoriesDatetime;
 
   BoxsModel(
       {this.boxsId,
@@ -24,7 +29,12 @@ class BoxsModel {
       this.boxesDiscount,
       this.boxsDate,
       this.boxsCategorie,
-      this.restaurantId});
+      this.restaurantId,
+      this.categoriesId,
+      this.categoriesName,
+      this.categoriesImage,
+      this.categoriesDescription,
+      this.categoriesDatetime});
 
   BoxsModel.fromJson(Map<String, dynamic> json) {
     boxsId = json['boxs_id'];
@@ -39,6 +49,11 @@ class BoxsModel {
     boxsDate = json['boxs_date'];
     boxsCategorie = json['boxs_categorie'];
     restaurantId = json['restaurant_id'];
+    categoriesId = json['categories_id'];
+    categoriesName = json['categories_name'];
+    categoriesImage = json['categories_image'];
+    categoriesDescription = json['categories_description'];
+    categoriesDatetime = json['categories_datetime'];
   }
 
   Map<String, dynamic> toJson() {
@@ -55,6 +70,11 @@ class BoxsModel {
     data['boxs_date'] = this.boxsDate;
     data['boxs_categorie'] = this.boxsCategorie;
     data['restaurant_id'] = this.restaurantId;
+    data['categories_id'] = this.categoriesId;
+    data['categories_name'] = this.categoriesName;
+    data['categories_image'] = this.categoriesImage;
+    data['categories_description'] = this.categoriesDescription;
+    data['categories_datetime'] = this.categoriesDatetime;
     return data;
   }
 }

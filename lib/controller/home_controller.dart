@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:pff/core/services/services.dart';
+import 'package:pff/view/Routing/App_route.dart';
 
 import '../core/class/statusrequest.dart';
 import '../core/functions/handlingdatacontrol.dart';
@@ -14,6 +15,7 @@ abstract class HomeController extends GetxController {
   late Statusrequest statusrequest;
   initialData();
   getdata();
+  goToBoxs(List categories, int selectedcatgories, String categoriesid);
 }
 
 class HomeControllerImp extends HomeController {
@@ -49,5 +51,14 @@ class HomeControllerImp extends HomeController {
       }
     }
     update();
+  }
+
+  @override
+  goToBoxs(categories, selectedcatgories, categoriesid) {
+    Get.toNamed(AppRoute.boxs.name, arguments: {
+      "categories": categories,
+      "selectedcatgories": selectedcatgories,
+      "catid": categoriesid,
+    });
   }
 }

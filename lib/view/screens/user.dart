@@ -82,13 +82,13 @@ class UserMenu extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                      backgroundColor: Color.fromARGB(255, 244, 146, 113),
+                      backgroundColor: primaryColor,
                       side: BorderSide.none,
                       shape: const StadiumBorder(),
                     ),
                     child: Text(
                       "Edit Profile",
-                      style: TextStyle(color: Colors.black, fontSize: 18),
+                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
                 ),

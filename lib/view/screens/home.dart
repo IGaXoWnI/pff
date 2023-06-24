@@ -3,15 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:pff/core/shared/cycle.dart';
 
 import '../../controller/home_controller.dart';
 import '../../core/class/handlingdataview.dart';
 import '../../core/constants/appColors.dart';
 import '../../core/shared/app_bar.dart';
 import '../../core/shared/cardWidget.dart';
-import '../../core/shared/cycle.dart';
 import '../../core/shared/offre.dart';
-import '../widgets/linkapi.dart';
 
 class Home extends StatelessWidget {
   var _textEditingController;
@@ -25,7 +24,10 @@ class Home extends StatelessWidget {
         builder: (controller) => HandlingDataView(
               statusrequest: controller.statusrequest,
               widget: Scaffold(
-                appBar: homeAppBar(context),
+                appBar: homeAppBar(
+                  context,
+                  ishomeappbar = true,
+                ),
                 body: Padding(
                   padding:
                       const EdgeInsets.only(left: 20.0, right: 20, top: 35),
@@ -66,25 +68,7 @@ class Home extends StatelessWidget {
                       SizedBox(
                         height: 15,
                       ),
-                      Container(
-                        height: 100,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: controller.categories
-                              .length, // Replace with the actual number of items in the list
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.only(right: 4.0),
-                              child: CycleWidget(
-                                urlPath:
-                                    "${AppLink.imagecategories}/${controller.categories[index]['categories_image']}",
-                                categoriestitle:
-                                    '${controller.categories[index]['categories_name']}',
-                              ),
-                            );
-                          },
-                        ),
-                      ),
+                      Container(height: 100, child: CategoriesListHome()),
                       SizedBox(
                         height: 25,
                       ),
@@ -98,25 +82,7 @@ class Home extends StatelessWidget {
                       SizedBox(
                         height: 25,
                       ),
-                      Container(
-                        height: 273,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: controller.boxs
-                              .length, // Replace with the actual number of items in your list
-                          itemBuilder: (BuildContext context, int index) {
-                            return CardWidget(
-                              imgUrl:
-                                  "${AppLink.imageboxs}/${controller.boxs[index]['boxs_image']}",
-                              cardTitle:
-                                  "${controller.boxs[index]['boxs_name']}",
-                              rating: "5",
-                              logo:
-                                  "${AppLink.imageboxs}/${controller.boxs[index]['boxs_logo']}",
-                            );
-                          },
-                        ),
-                      ),
+                      Container(height: 273, child: CardList()),
                     ],
                   ),
                 ),

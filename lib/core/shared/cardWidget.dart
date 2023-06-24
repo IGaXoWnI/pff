@@ -1,20 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
-class CardWidget extends StatelessWidget {
-  final String imgUrl;
-  final String logo;
-  final String cardTitle;
-  final String? time;
-  final String rating;
+import '../../controller/home_controller.dart';
+import '../../data/models/boxs_model.dart';
+import '../../view/widgets/linkapi.dart';
 
-  const CardWidget(
-      {super.key,
-      required this.imgUrl,
-      required this.cardTitle,
-      this.time,
-      required this.rating,
-      required this.logo});
+class CardList extends GetView<HomeControllerImp> {
+  CardList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    HomeControllerImp controller = Get.put(HomeControllerImp());
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: controller
+          .boxs.length, // Replace with the actual number of items in your list
+      itemBuilder: (BuildContext context, int index) {
+        return CardWidget(
+            boxsModel: BoxsModel.fromJson(controller.boxs[index]));
+      },
+    );
+  }
+}
+
+class CardWidget extends GetView<HomeControllerImp> {
+  final BoxsModel boxsModel;
+
+  const CardWidget({
+    super.key,
+    required this.boxsModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +52,7 @@ class CardWidget extends StatelessWidget {
                           topRight: Radius.circular(15),
                         ),
                         child: Image.network(
-                          imgUrl,
+                          "${AppLink.imageboxs}/${boxsModel.boxsImage}",
                         ),
                       ),
                     ),
@@ -48,7 +64,9 @@ class CardWidget extends StatelessWidget {
                         height: 60,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(100),
-                          child: Image(image: NetworkImage(logo)),
+                          child: Image(
+                              image: NetworkImage(
+                                  "${AppLink.imageboxs}/${boxsModel.boxsLogo}")),
                         ),
                       ),
                     )
@@ -64,7 +82,7 @@ class CardWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          cardTitle,
+                          "${boxsModel.boxsName}",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
@@ -85,7 +103,7 @@ class CardWidget extends StatelessWidget {
                               width: 24,
                               height: 24,
                             ),
-                            Text(rating, style: TextStyle(color: Colors.grey))
+                            Text("5", style: TextStyle(color: Colors.grey))
                           ],
                         )
                       ],

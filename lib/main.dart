@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Homepage(),
       initialBinding: initialbinding(),
-      initialRoute: AppPages.initial.toString(),
+      // initialRoute: AppPages.initial.toString(),
       getPages: AppPages.routes,
     );
   }

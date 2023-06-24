@@ -15,4 +15,8 @@ class AppLink {
 //=========home=========//
 
   static const String home = "$server/home.php";
+
+//=========boxsview=========//
+
+  static const String boxs = "$server/boxs/boxs.php";
 }
